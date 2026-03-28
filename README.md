@@ -1,2 +1,29 @@
-# freeswitch-verto-webrtc-sdk
-WebRTC JavaScript SDK for FreeSWITCH mod_verto enabling browser-based calling over WebSockets (WS/WSS), with support for SIP registration, call control, and real-time events.
+# 📞 Verto WebRTC SDK + FreeSWITCH Setup Guide
+
+## 📌 Overview
+
+The **mod_verto** module in FreeSWITCH enables **WebRTC-based communication** using **WebSockets (WS/WSS)**.
+
+It allows browser clients to:
+- Register SIP users
+- Make / receive calls
+- Control call states (hold, transfer, etc.)
+
+This guide covers:
+- FreeSWITCH configuration (`verto.conf.xml`)
+- User directory setup (`complete_directory.xml`)
+- Dialplan routing
+- Frontend SDK integration (`verto-sdk.js`)
+
+---
+
+# 🏗️ Architecture
+
+```text
+Browser (Verto SDK)
+        ↓
+WebSocket (WS/WSS)
+        ↓
+FreeSWITCH (mod_verto)
+        ↓
+SIP / Dialplan / Agents
